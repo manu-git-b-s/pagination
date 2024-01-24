@@ -501,27 +501,109 @@ const paginationData = [
   },
 ];
 
-const buttons = document.querySelectorAll("button");
-buttons.forEach((btn) =>
-  btn.addEventListener("click", () => {
-    console.log(btn.textContent);
-  })
-);
+let currentItem = 0;
 
-let data = 6;
-const filteredData = paginationData.splice(data * 10, 10);
+const prevBtn = document.querySelector("#prev-btn");
+const btn1 = document.querySelector("#btn-1");
+const btn2 = document.querySelector("#btn-2");
+const btn3 = document.querySelector("#btn-3");
+const btn4 = document.querySelector("#btn-4");
+const btn5 = document.querySelector("#btn-5");
+const btn6 = document.querySelector("#btn-6");
+const btn7 = document.querySelector("#btn-7");
+const btn8 = document.querySelector("#btn-8");
+const btn9 = document.querySelector("#btn-9");
+const btn10 = document.querySelector("#btn-10");
+const btnNext = document.querySelector("#next-btn");
 
-filteredData.map((data) => {
-  const tr = document.createElement("tr");
-  const td1 = document.createElement("td");
-  const td2 = document.createElement("td");
-  const td3 = document.createElement("td");
-  td1.textContent = data.id;
-  td3.textContent = data.email;
-  td2.textContent = data.name;
-  tr.appendChild(td1);
-  tr.appendChild(td2);
-  tr.appendChild(td3);
+if (btn1) {
+  btn1.addEventListener("click", () => {
+    currentItem = 0;
+    displayEmployees(currentItem);
+  });
+}
+if (btn2) {
+  btn2.addEventListener("click", () => {
+    currentItem = 10;
+    displayEmployees(currentItem);
+  });
+}
+if (btn3) {
+  btn3.addEventListener("click", () => {
+    currentItem = 20;
+    displayEmployees(currentItem);
+  });
+}
+if (btn4) {
+  btn4.addEventListener("click", () => {
+    currentItem = 30;
+    displayEmployees(currentItem);
+  });
+}
+if (btn5) {
+  btn5.addEventListener("click", () => {
+    currentItem = 40;
+    displayEmployees(currentItem);
+  });
+}
+if (btn6) {
+  btn6.addEventListener("click", () => {
+    currentItem = 50;
+    displayEmployees(currentItem);
+  });
+}
+if (btn7) {
+  btn7.addEventListener("click", () => {
+    currentItem = 60;
+    displayEmployees(currentItem);
+  });
+}
+if (btn8) {
+  btn8.addEventListener("click", () => {
+    currentItem = 70;
+    displayEmployees(currentItem);
+  });
+}
+if (btn9) {
+  btn9.addEventListener("click", () => {
+    currentItem = 80;
+    displayEmployees(currentItem);
+  });
+}
+if (btn10) {
+  btn10.addEventListener("click", () => {
+    currentItem = 90;
+    displayEmployees(currentItem);
+  });
+}
+
+// disabling nextbtn
+// if (currentItem >= 90 && currentItem <= 100) {
+//   btnNext.className = "btn btn-primary disabled";
+// } else {
+//   btnNext.className = "btn btn-primary";
+// }
+
+// disabling prevbtn
+// if (currentItem >= 0 && currentItem <= 10) {
+//   prevBtn.className = "btn btn-primary";
+// } else {
+//   prevBtn.className = "btn btn-primary disabled";
+// }
+
+function displayEmployees(start) {
+  let output = "";
   const tbody = document.querySelector(".table-body");
-  tbody.appendChild(tr);
-});
+  console.log(start);
+
+  for (let i = start; i < start + 10; i++) {
+    output += `
+    <tr>
+      <td>${paginationData[i].id}</td>
+      <td>${paginationData[i].name}</td>
+      <td>${paginationData[i].email}</td>
+    </tr>
+  `;
+    tbody.innerHTML = output;
+  }
+}
