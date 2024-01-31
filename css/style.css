@@ -1,0 +1,18 @@
+#nav-bar {
+  position: relative;
+  top: 12cm;
+}
+
+#description {
+  font-size: large;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#table-head {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#t-body {
+  text-align: center;
+}
