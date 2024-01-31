@@ -13,4 +13,4 @@ This GitHub repository contains a simple web page that showcases details with pa
 
 ## Demo
 
-Check out the live demo [here](https://pagination-manu.netlify.app)
+Check out the live demo [here](https://pagination-manu.netlify.app/)
